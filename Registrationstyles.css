@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	font-family:'Quicksand',sans-serif;
+}
+
+
+
+.container{
+	position:relative;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	height:100%;
+	padding:50px 100px;
+	
+}
+.container:after{
+	content:'';
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:120%;
+	background:url("https://img.freepik.com/premium-photo/top-view-autumn-workspace-with-copying-area-laptops-office-supplies-leaves_512343-304.jpg") no-repeat center;
+	background-size:cover;
+	filter:blur(10px);
+	z-index:-1;
+}
+
+.box{
+	max-width:850px;
+	display:grid;
+	grid-template-columns:repeat(2,1fr);
+	justify-content:center;
+	align-items:center;
+	text-align:center;	
+}
+
+.left{
+	height:100%;
+	background:url("https://previews.123rf.com/images/andreypopov/andreypopov1908/andreypopov190800855/128599650-businesswoman-s-hand-filing-online-registration-form-on-laptop.jpg") no-repeat center;
+	background-size:cover;
+}
+
+.right{
+	padding:25px 40px;
+	box-shadow:10px 6px 10px;
+	background-color:white;
+}
+
+h2{
+	position:relative;
+	padding-bottom:10px;
+	margin-bottom:10px;
+	color:black;
+}
+
+h2:after{
+	content:'';
+	position:absolute;
+	left:50%;
+	bottom:0;
+	transform:translateX(-50%);
+	height:4px;
+	width:50px;
+	border-radius:3px;
+	background-color:white;
+}
+
+.field{
+	width:100%;
+	padding:0.5rem 1rem;
+	background-color:rgba(230,230,230,0.6);
+	font-size:1.1rem;
+	margin-bottom:22px;
+	transition: .3s;
+	border:2px solid black;
+	border-radius:30px;
+}
+
+.field:hover{
+	background-color:rgba(0,0,0,0.1);
+}
+.field.focus{
+	background-color:black;
+}
+
+.input:focus ~ .field,
+.input:focus ~ .field{
+	position:absoulte;
+	top:-10px;
+	left:20px;
+	font-size:14px;
+	background-color:white;
+	border-radius:30px;
+	color:black;
+	padding:0 10px;
+}
+
+.input-submit{
+	width:100%;
+	height:50px;
+	background:Green;
+	font-size:16px;
+	font-weight:500;
+	border-radius:30px;
+	cursor:pointer;
+	color:black;
+}
+
+

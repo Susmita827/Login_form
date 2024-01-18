@@ -1,0 +1,145 @@
+@charset "UTF-8";
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	font-family:'poppins',sans-serif;
+}
+body{
+	background-image:url("https://cdn.create.vista.com/api/media/medium/207501816/stock-photo-flat-lay-coffee-cup-laptop-digital-tablet-hydrangea-flowers-marble?token=");
+	background-position:center;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+
+a{
+	text-align:none;
+	color:var(--second-color);	
+}
+a:hover{
+	text-decoration:underline;
+}
+
+.ab{
+	width:100%;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	min-height:100vh;
+	background-color:rgba(0,0,0,0.2);
+}
+
+.bc{
+	position:relative;
+	width:450px;
+	backdrop-filter:blur(25px);
+	border:2px solid white;
+	border-radius:15px;
+	padding:8em 3em 4em 3em;
+	color:var(--second-color);
+	box-shadow:0px 0px 10px;
+}
+
+.login-header{
+	position:absolute;
+	top:0;
+	left:50%;
+	transform:translateX(-50%);
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	background-color:white;
+	width:140px;
+	height:70px;
+	border-radius:0 0 20px 20px;	
+}
+
+.login-header span{
+	font-size:30px;
+	color:black;
+}
+
+.input-box{
+	position:relative;
+	display:flex;
+	flex-direction:column;
+	margin:20px 0;
+}
+
+.input-field{
+	width:100%;
+	height:55px;
+	font-size:17px;
+	background:transparent;
+	color:var(--second-color);
+	padding-inline:20px 50px;
+	border:2px solid black;
+	border-radius:30px;
+
+} 
+.label{
+	position:absolute;
+	top:15px;
+	left:20px;
+	transition:.2s;	
+}
+
+.input-field:focus ~ .label,
+.input-field:focus ~ .label{
+	position:absoulte;
+	top:-10px;
+	left:20px;
+	font-size:14px;
+	background-color:white;
+	border-radius:30px;
+	color:black;
+	padding:0 10px;
+}
+
+.remember{
+	display:flex;
+	justify-content:space-between;
+	font-size:16px;
+}
+
+.input-submit{
+	width:100%;
+	height:50px;
+	background:white;
+	font-size:16px;
+	font-weight:500;
+	border-radius:30px;
+	cursor:pointer;
+}
+
+.input-submit:hover{
+	background:grey;
+}
+
+.register{
+	text-align:center;
+}
+.register a{
+	font-weight:500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
