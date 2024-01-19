@@ -34,8 +34,28 @@ public class Loginservlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		emailID=request.getParameter("em");
+		password=request.getParameter("pw"); 
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+				Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
+				Statement st=con.createStatement();
+				ResultSet rs=st.executeQuery("select * from stud ");
+				while(rs.next()) {
+					if((rs.getString(6)).equals(password)) {
+						RequestDispatcher rd=request.getRequestDispatcher("Welcome.html");  				  
+					    rd.forward(request, response);
+					}
+					else {
+						RequestDispatcher rd=request.getRequestDispatcher("Error.html");  				  
+					    rd.forward(request, response);
+					}
+				}
+				con.close();
+				
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
 	}
 
 	/**
@@ -48,7 +68,7 @@ public class Loginservlet extends HttpServlet {
 			Class.forName("oracle.jdbc.OracleDriver");
 				Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","12345678");
 				Statement st=con.createStatement();
-				ResultSet rs=st.executeQuery("select * from stud where email='"+emailID+"'");
+				ResultSet rs=st.executeQuery("select * from stud ");
 				while(rs.next()) {
 					if((rs.getString(6)).equals(password)) {
 						RequestDispatcher rd=request.getRequestDispatcher("Welcome.html");  				  
