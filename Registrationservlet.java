@@ -53,12 +53,12 @@ public class Registrationservlet extends HttpServlet {
 				st.setString(5, Contact);
 				st.setString(6, Password);
 				
-//				int ex=st.executeUpdate();
-//				if(ex!=0) 
-//				{
-					RequestDispatcher rd=request.getRequestDispatcher("Login.html"); 
-					rd.forward(request, response);
-	//}
+				int ex=st.executeUpdate();
+				if(ex!=0) 
+				{
+					response.sendRedirect("Login.html"); 
+					
+	}
 	con.close();
 	}
 	catch (Exception e) 
